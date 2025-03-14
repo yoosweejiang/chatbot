@@ -4,9 +4,7 @@ from openai import OpenAI
 # Show title and description.
 st.title("💬 Chatbot")
 st.write(
-    "This is a simple chatbot that uses OpenAI's GPT-3.5 model to generate responses. "
-    "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
-    "You can also learn how to build this app step by step by [following our tutorial](https://docs.streamlit.io/develop/tutorials/llms/build-conversational-apps)."
+    "This is a simple chatbot that uses dify and 百炼. "
 )
 
 # Ask user for their OpenAI API key via `st.text_input`.
@@ -18,7 +16,8 @@ if not openai_api_key:
 else:
 
     # Create an OpenAI client.
-    client = OpenAI(api_key=openai_api_key)
+    client = OpenAI(api_key=openai_api_key,
+    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1")
 
     # Create a session state variable to store the chat messages. This ensures that the
     # messages persist across reruns.
