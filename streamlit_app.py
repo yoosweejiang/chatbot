@@ -40,7 +40,7 @@ else:
 
         # Generate a response using the OpenAI API.
         stream = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="deepseek-v3",
             messages=[
                 {"role": m["role"], "content": m["content"]}
                 for m in st.session_state.messages
